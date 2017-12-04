@@ -5,6 +5,9 @@ def matrixZeroer(matrix):
     #need to be zeroed... this saves storage space (doesnt speed up algorithm though)
     rowNulls = [False]*M
     colNulls = [False]*N
+    #we could even get rid of this extra storage by using the first row and column as 
+    #a these storage vectors as described in solution.  Seems overly complex unless
+    #storage is really an issue.
     for i in range(M):
         for j in range(N):
             if matrix[i][j] == 0:
