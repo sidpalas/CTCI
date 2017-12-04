@@ -10,6 +10,8 @@ def matrixZeroer(matrix):
             if matrix[i][j] == 0:
                 rowNulls[i] = True
                 colNulls[j] = True
+    #dont need to loop through entire matrix... only need to touch the rows/columns specified
+    #depending on how many zeros are expected this approach could be faster or slower
     for i in range(M):
         for j in range(N):
             if rowNulls[i] or colNulls[j]:
