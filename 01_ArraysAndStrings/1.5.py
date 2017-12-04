@@ -1,4 +1,7 @@
 def isOneAway(str1, str2):
+    #should have broken up insertion, deletion and, replacement into separate functions
+    #Also could have recognized that deletion and insertion could be handled with the
+    #Same code but by swapping the order of the inputs
     str1 = str1.lower()
     str2 = str2.lower()
     len1 = len(str1)
