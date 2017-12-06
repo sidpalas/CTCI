@@ -18,17 +18,11 @@ for i in range(15):
     testLinkedList.insert(i % 3)
 
 #print original list for comparison purposes
-current = testLinkedList.head
-while current:
-    print current.get_data()
-    current = current.get_next()
+testLinkedList.printList()
 
 print "///////////"
 
 removeDups(testLinkedList)
 
 #print modified list
-current = testLinkedList.head
-while current:
-    print current.get_data()
-    current = current.get_next()
+testLinkedList.printList()
