@@ -5,6 +5,9 @@ def returnKthFromEnd(linkedList, k):
     storedList = [0]*(k+1)
     while current:
         storedList.append(current)
+        #using a list in this fashion is innefficient...
+        #should have used deque
+        #https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues
         storedList.pop(0)
         current = current.get_next()
     return storedList.pop(0)
