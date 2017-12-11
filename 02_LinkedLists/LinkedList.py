@@ -19,13 +19,25 @@ class Node(object):
 
 class LinkedList(object):
 
-    def __init__(self, head=None):
+    def __init__(self, head=None, tail=None):
         self.head = head
+        self.tail = tail
 
     def insert(self, data):
         new_node = Node(data)
         new_node.set_next(self.head)
         self.head = new_node
+        if self.tail == None:
+            self.tail = new_node
+
+    #added an append method to add things to the tail
+    def append(self, data):
+        new_node = Node(data)
+        if self.tail == None:
+            self.insert(data)
+        else:
+            self.tail.set_next(new_node)
+            self.tail = new_node
 
     def size(self):
         current = self.head
