@@ -1,4 +1,8 @@
 class minStack(object):
+    #could have made this more space efficient by only keeping a stack of the
+    #mins (one per value) then when using pop() I could check if there remain
+    #any more values that match the current min or not.  This solution still
+    #satisfies O(1) runtime, but wastes some space.
     def __init__(self):
         self.stack = []
         self.minSubStack = []
