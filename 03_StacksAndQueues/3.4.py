@@ -4,36 +4,25 @@ class MyQueue(object):
     def __init__(self):
         self.forward = Stack()
         self.reverse = Stack()
-        self.toggle = 'F'
 
     def push(self, data):
-        if self.toggle == 'F':
-            self.forward.push(data)
-        else:
-            self.toggle = 'F'
-            #move all the data to the forward stack and push on top of it
-            while self.reverse.top:
-                self.forward.push(self.reverse.pop())
-            self.forward.push(data)
+        self.forward.push(data)
 
     def pop(self):
-        if self.toggle == 'R':
+        #if there is data in the reverse stack, use it
+        if self.reverse.top:
             return self.reverse.pop()
+        #if not, move all the data from the forward stack over
         else:
-            self.toggle = 'R'
+            print "Shifting elements to reverse stack..."
             while self.forward.top:
                 self.reverse.push(self.forward.pop())
             return self.reverse.pop()
 
-    def __str__(self):
-        print 'Forward'
-        testQueue.forward.printStack()
-        print 'Reverse:'
-        testQueue.reverse.printStack()
 
 testQueue = MyQueue()
 
-for i in range(6):
+for i in range(3):
     testQueue.push(i)
 
 testQueue.forward.printStack()
@@ -53,4 +42,5 @@ print '-------------'
 print "reverse stack:"
 testQueue.reverse.printStack()
 print '-------------'
-testQueue.forward.printStack()
+print testQueue.pop()
+print testQueue.pop()
