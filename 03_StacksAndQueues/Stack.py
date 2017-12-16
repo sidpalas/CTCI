@@ -33,7 +33,10 @@ class Stack(object):
         return value
 
     def peek(self):
-        return self.top.get_data()
+        if self.top:
+            return self.top.get_data()
+        else:
+            return None
 
     def printStack(self):
         current = self.top
