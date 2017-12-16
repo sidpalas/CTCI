@@ -1,5 +1,4 @@
 from collections import deque
-import random
 
 class AnimalShelterQueue(object):
     def __init__(self):
