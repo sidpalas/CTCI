@@ -23,6 +23,12 @@ class BinaryNode(object):
         else:
             return None
 
+    def getData(self):
+        if self.name:
+            return self.name
+        else:
+            return None
+
 def minTree(array):
     if len(array) == 0:
         return
