@@ -8,7 +8,7 @@ def returnNextValue(node):
         tempNode = node.getParent()
         while tempNode.isRight():
             tempNode = tempNode.getParent()
-        if tempNode.getParent()
+        if tempNode.getParent():
             return tempNode.getParent()
         else:
             return None
