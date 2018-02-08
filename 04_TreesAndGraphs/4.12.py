@@ -3,6 +3,7 @@ from Tree import minTree
 
 #should have broken up into multiple functions... kind of hard to follow
 
+#question only asked to count them... not determine what they are.
 def findPathsWithSums(root, sumOfInterest, prevSum, searchDict, depth):
     print searchDict
     if root:
@@ -18,15 +19,16 @@ def findPathsWithSums(root, sumOfInterest, prevSum, searchDict, depth):
                     print '%%%%%%%%'
         newSumOfInterest = sumOfInterest + newSum
         if newSumOfInterest in searchDict:
-            temp = searchDict[newSumOfInterest] #when I tried to append directly this didnt work...
-            temp.append(depth)
-            searchDict[newSumOfInterest] = temp
+            tempIdx = searchDict[newSumOfInterest] #when I tried to append directly this didnt work...
+            tempIdx.append(depth)
+            searchDict[newSumOfInterest] = tempIdx
         else:
             searchDict[newSumOfInterest] = [depth]
         if root.getLeft():
             findPathsWithSums(root.getLeft(), sumOfInterest, newSum, searchDict, depth + 1)
         if root.getRight():
             findPathsWithSums(root.getRight(), sumOfInterest, newSum, searchDict, depth + 1)
+
 
 testRoot = minTree(range(1,16))
 testDict = dict()
