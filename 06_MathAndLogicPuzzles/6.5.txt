@@ -1,0 +1,14 @@
+Water Jugs
+
+With only 5 quart and 3 quart jugs, measure 4 quarts
+
+Two options:
+
+1) fill 5, use it to fill 3, 2 remain (store elsewhere)
+2) repeat 1, add it to remaining 2 to make 4
+
+----
+
+1) fill 3, dump into 5
+2) fill 3, dump into 5, 1 remains
+3) fill 3, add it to remaining 1 to make 4
