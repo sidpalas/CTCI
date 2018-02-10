@@ -1,0 +1,18 @@
+Blue Eyed Island
+
+People with blue eyes must leave the island:
+  - There is at least one person with blue eyes
+  - They can see each others eyes but cant tell each other
+  - One flight out per day
+
+--------
+
+1) If there is only one person w/ blue eyes, they see everyone else without them,
+deduce that they must have blue eyes and leave on day 1 and its done.
+
+2) If there are 2 people w/ blue eyes, they look around see only 1 other person
+with blue eyes. If that person was indeed the only one they would have left on
+day 1 (per above), so there must be 2.  They both realize this and leave on day 2.
+
+3) The pattern continues, such that all n blue eyed people leave on the nth day by
+using the deduction outlined above.
