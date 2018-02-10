@@ -1,0 +1,18 @@
+Egg Drop:
+
+First thought... drop at the midway point this would eliminate half of the floors immediately.
+With unlimited eggs, the best approach would be to continue to divide in half, but with 2
+eggs we can improve the worst case by starting lower
+
+If it breaks, the worst case will equal the floor we started on b/c N could be that floor - 1 and
+we would have to work our way up from the 1st by 1 to guarantee the 2nd egg doesnt break.
+
+If it doesn't break we can move up by some amount... that amount should be one less than the starting
+floor such that if it breaks at that point, we have enough drops remaining to not exceed the worst
+case from above.
+
+So we want the smallest m such that x + (x-1) + (x-2) + ... + (x - (m - 1)) > 100
+
+This is true for m = 14 (14 + 13 + 12 + ... + 1) = 105.
+
+So, start on the 14th floor.  If it breaks work up from 1.  If it remains intact, jump to 27th floor, then 39th floor, and so on.
