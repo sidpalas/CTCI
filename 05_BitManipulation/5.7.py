@@ -1,3 +1,4 @@
+#would need to do logical right shift to handle negative numbers as well...
 def pairwiseSwap(num):
     #Assumes max of 32 bit values
     maskOdd = int('01'*16,2)
