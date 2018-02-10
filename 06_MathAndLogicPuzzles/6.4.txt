@@ -1,0 +1,14 @@
+Ants on a triangle:
+
+Given n ants on an n-sided polygon, what is the likelihood
+they will collide if they all chose a random direction (50/50 either
+way) and walk at equal speeds?
+
+Only way they don't collide is if they all choose the same direction
+
+p_clock = (1/2)^n
+p_cclock = (1/2)^n
+
+p_noCollision = 2*(1/2)^n
+
+p_collision = 1 - 2*(1/2)^n

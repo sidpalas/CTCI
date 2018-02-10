@@ -1,0 +1,28 @@
+G1: One Shot
+G2: 3 shots, need 2/3
+p: likelihood of making shot
+
+-----
+
+P_win for G1 = p
+
+P_win for G2 = ??
+
+winning sequences: 111, 110, 101, 011
+
+p^3 + 3 * (p^2 * (1 - p))
+p^3 - 3p^3 + 3p^2
+-2p^3 + 3p^2
+
+-----
+
+We want to play game 2 when:
+
+-2p^3 + 3p^2 > p
+-2p^2 + 3p > 1
+-2p^2 + 3p - 1 > 0
+2p^2 - 3p + 1 < 0
+(2p - 1)(p - 1) < 0 #(p-1) has to be < 0 because p<1... therefore (2p-1)>0
+2p - 1 > 0
+2p > 1/2
+p > 1/2 <-- if this is true, play G2

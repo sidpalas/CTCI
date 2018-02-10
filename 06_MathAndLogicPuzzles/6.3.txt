@@ -1,0 +1,24 @@
+Dominos on a chessboard
+
+8x8 chessboard with two diagonal corners removed:
+
+  0 1 0 1 0 1 0
+0 1 0 1 0 1 0 1
+1 0 1 0 1 0 1 0
+0 1 0 1 0 1 0 1
+1 0 1 0 1 0 1 0
+0 1 0 1 0 1 0 1
+1 0 1 0 1 0 1 0
+0 1 0 1 0 1 0
+
+Both corners are the same color (either both white or both black)
+
+When placing a domino, regardless of orientation it will always
+cover one white square and one black square.
+
+It is therefore impossible to cover a space with an unequal number
+of white and black squares.  The chessboard will have 32 of one color
+and 30 of the other (depending which corners are removed) so it
+cannot be covered with the 31 dominos.
+
+  
