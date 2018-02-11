@@ -1,0 +1,24 @@
+1000 Bottles and 1 is poisoned...
+
+How to use 10 test strips (reusable if result is negative) to figure out which bottle is
+poisoned as fast as possible.
+
+One test per day and 7 days to receive result.
+
+I didn't realize you could run an additional test in the interim and came up w/ solution
+to solve in 3 tests maximum (28 days).
+
+1) Split into 11 groups (10 x 90, 1 x 100)
+2a) If one comes back positive that leaves 9 strips for 90 Bottles
+    split into 10 x 9
+2b) If none come back positive that leaves 10 strips for 100 Bottles
+    split into 10 x 9, 1 x 10
+3a) 9 x 1
+3b) 9 x 1 (if one was positive), 10 x 1 if (none were positive)
+
+The optimal solution was to map the use the binary representation of the bottle numbers
+and put a drop on each set bit.
+
+This will reveal the bottle precisely after just one test.
+
+With 10 strips you can represent 2^10 (1024) bottles this way... too bad I didn't think of that.
