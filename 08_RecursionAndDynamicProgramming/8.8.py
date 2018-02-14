@@ -13,6 +13,9 @@ def permuteWithDups(stringIn):
                     permutes.append(temp)
         return permutes
 
+#while we cant beat the O(n!) speed for this algo in the worst case,
+#we can do much better for cases with lots of duplications...
+
 print(permuteWithDups('a'))
 
 print(permuteWithDups('ab'))
