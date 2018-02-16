@@ -1,4 +1,3 @@
-#from bitarray import bitarray
 from operator import mul,add
 
 global max32
