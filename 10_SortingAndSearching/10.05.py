@@ -13,6 +13,8 @@ def findNextNonEmptyIdx(arrayIn, idx, lowBound, highBound):
         return -1
 
 def sparseBinarySearch(arrayIn, searchStr):
+    if searchStr == "":
+        pass #should address what happens when someone searches for an empty string...
     low = 0
     high = len(arrayIn) - 1
     mid = (low + high) // 2
