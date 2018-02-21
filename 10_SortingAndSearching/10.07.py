@@ -2,6 +2,8 @@ def findMissingInt(bigArrayIn):
     #initialize bit vector:
     bitVector = 0
     for val in bigArrayIn:
+        #by not breaking this up into small values, this gets super inefficient for large numbers
+        #a real BitVector implementation would use an array of smaller numbers (8, 16, or 32 bytes each)
         bitVector = bitVector | 1 << val
         print(bin(bitVector))
     i = 1
