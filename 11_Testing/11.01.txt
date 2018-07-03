@@ -1,0 +1,12 @@
+Find the mistakes in the following code:
+
+unsigned int i;
+for (i =  100; 1 >= 0 --i)
+  printf("%d\n", i);
+
+-----
+
+1) What would you like the code to do?
+
+%d is for decimals, but i is an unsigned int
+unsigned int will never violate i >=0 (not sure how --i will be handled when i already equals 0)
