@@ -1,0 +1,33 @@
+We have the following method used in a chess game:
+
+boolean canMoveTo(int x, int y)
+
+The method is part of the Piece class and returns whether a piece can move to position (x,y).
+
+How would you test this method?
+
+------
+
+Do we have access to the source? (white or black box testing?)
+
+What are the allowable inputs (zero indexed...):
+ x: [0, width of board]
+ y: [0, height of board]
+
+Normal inputs:
+  for each Piece type:
+    - Attempting to move to space on board that doesn't have another piece occupying it
+    - Attempting to move to space on board that does have another piece occupying it
+    - Moving in both positive and negative (according to index) directions
+    - Trying each type of move (i.e. pawn can move diagonal, but only to take a piece)
+    - Testing the nuances of blocking vs non-blocking pieces (horse can jump over, but other pieces cannot)
+
+Edge cases:
+  - Attempting to move to the location a piece already is located
+
+Erroneous Inputs (should method return false or throw error?):
+  - Attempting to move off the board
+  - Inputing non-integer values
+
+Other:
+  - Many moves depend on the state of the board, we would want to test how the board data is passed to the method (or however that interaction is handled)

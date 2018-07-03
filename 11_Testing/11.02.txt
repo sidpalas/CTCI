@@ -1,0 +1,18 @@
+You are given the source (white box testing) to an application which crashes when it runs.
+
+After running it 10 times in a debugger you find it never crashes in the same place. It is single threaded and only uses the C standard library.
+
+What errors could be causing.
+
+-----
+
+Errors which appear to be random like this are oftentimes have to do with pointers being used incorrectly.
+
+Internal:
+The code depends on a pointer which was never set to the correct value and it depends on that block of memory happening to be equal to zeros
+  - Find all uses of pointers and check whether they are initialized to the correct values
+A memory overflow could cause the program to crash in different places because the timing would vary
+  - how to debug?
+
+External:
+  - Dependencies could be causing the crash 
