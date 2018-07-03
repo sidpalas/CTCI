@@ -1,0 +1,40 @@
+How would you test an ATM in a distributed banking system?
+
+-------
+
+Who is using?
+How many ATMS are there?
+Where are they located?
+Do they accept deposits or only withdrawls?
+How much throughput?
+
+Structure:
+
+Location
+-- test across each type of location (i.e. different countries/states/etc...)
+
+Security:
+-- examine how difficult it is to open under a variety of conditions
+-- test camera recording operations
+-- test data storage operations
+
+Mechanical:
+-- money delivery
+-- restocking operations
+-- test impact of environmental conditions
+
+SW:
+-- test network connectivity
+-- test SW update
+
+Nominal Operations:
+-- test withdrawls requiring every type of bill
+-- test min withdrawl
+-- test withdrawl maximum
+-- fraud detection systems?
+
+Non-standard operations:
+-- test > withdrawl maximum
+-- test different card types (in-network, not in-network)
+-- non-debit cards
+-- rapid withdrawl/deposits
