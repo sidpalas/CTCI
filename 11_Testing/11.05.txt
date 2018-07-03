@@ -1,0 +1,29 @@
+How would you test a pen?
+
+-----
+
+1) Who is the user of the pen and what are the use cases?
+2) What type of pen (refillable? click? cap?)
+3) Could also observe representative users to understand how they will use the pen
+4) Break it down into its various components:
+
+  - Inner plastic with ink + tip:
+    - writing under nominal conditions
+    - writing at various angles
+    - writing at various speeds
+    - writing on different surfaces
+    - testing how long in lasts with use
+    - testing how long ink lasts without use (age test)
+
+  - Outer shell:
+    - durability
+    - ergonomics
+
+  - Cap:
+    - does cap stay on under expected conditions (static, dynamic, amount/direction of force required to get it off)
+
+  - Integrated (full pen):
+    - refill process
+
+  - Extreme:
+    - Using the pen for nonstandard cases (opening a box, poking a hole in something, etc...)
