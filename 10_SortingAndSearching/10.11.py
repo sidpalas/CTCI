@@ -1,46 +1,44 @@
-class streamTreeNode(object):
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-        self.tally = 1
+import sys
 
-def track(root, intIn):
-    if root.val == intIn:
-        root.tally += 1
-    elif root.val > intIn:
-        root.tally += 1
-        if root.left:
-            track(root.left, intIn)
-        else:
-            root.left = streamTreeNode(intIn)
-    else: # root.val < intIn
-        if root.right:
-            track(root.right, intIn)
-        else:
-            root.right = streamTreeNode(intIn)
+def sortValleysAndPeaks(arrayIn):
+    for i in range(1,len(arrayIn),2):
+        biggestIdx = maxIndex(arrayIn, i - 1, i, i + 1)
+        if not i == biggestIdx:
+            tempI = arrayIn[i]
+            arrayIn[i] = arrayIn[biggestIdx]
+            arrayIn[biggestIdx] = tempI
+    return
 
-def getRankOfNumber(root, intIn):
-    atLeaf = False
-    cumulativeTally = 0
-    while not atLeaf:
-        if root.val == intIn:
-            return root.tally + cumulativeTally
-        elif root.val > intIn and root.left:
-            root = root.left
-        elif root.val < intIn and root.right:
-            cumulativeTally += root.tally
-            root = root.right
-        else:
-            if root.val < intIn:
-                cumulativeTally += root.tally
-            atLeaf = True
-    return cumulativeTally
+def maxIndex(arrayIn, a, b, c):
+    minVal = float('-inf')
+    length = len(arrayIn)
+    if a >= 0 and a < length:
+        aValue = arrayIn[a]
+    else:
+        aValue = minVal
 
-testRoot = streamTreeNode(5)
+    if b >= 0 and b < length:
+        bValue = arrayIn[b]
+    else:
+        bValue = minVal
 
-for val in [1,4,4,5,9,7,13,3]:
-    track(testRoot,val)
+    if c >= 0 and c < length:
+        cValue = arrayIn[c]
+    else:
+        cValue = minVal
 
-for i in range(0,15):
-    print(i, "-->", getRankOfNumber(testRoot, i))
+    maxVal = max(aValue, max(bValue, cValue))
+    if aValue == maxVal:
+        return a
+    elif bValue == maxVal:
+        return b
+    else:
+        return c
+
+testArray = [9, 1, 0, 4, 8, 7]
+
+print(testArray)
+
+sortValleysAndPeaks(testArray)
+
+print(testArray)
