@@ -1,0 +1,11 @@
+How would you load test a webpage without using any testing tools?
+
+----
+
+Can we still use SW?
+
+Yes:
+Write a program that that performs a variety of different load sequences and ramp up (parallel) usage while recording load times and checking for error codes?
+
+No:
+Mechanical Turk? Have many people all simultaneously follow a manual testing procedure
