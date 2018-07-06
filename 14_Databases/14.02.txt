@@ -1,0 +1,30 @@
+Open Requests:
+
+Write a SQL query to get a list of all buildings and the number of open requests (Requests.Status = 'Open')
+
+----
+
+Requests table has AptID, which will be used in conjunction with the Apartments table to get the BuildingID and in turn with the Buildings table to get the BuildingName
+
+If BuildingID is good enough...
+
+SELECT BuildingID, COUNT(RequestID) as NumRequests
+FROM requests
+INNER JOIN Apartments ON Requests.AptID = Apartments.AptID
+WHERE Status = 'Open'
+GROUP BY BuildingID;
+
+If we want to grab the BuildingName too...
+
+SELECT BuildingName, ISNULL(NumRequests, 0) AS 'OpenRequestCount'
+FROM buildings
+LEFT JOIN
+  (SELECT BuildingID, COUNT(RequestID) as NumRequests
+  FROM requests
+  INNER JOIN Apartments ON Requests.AptID = Apartments.AptID
+  WHERE Status = 'Open'
+  GROUP BY BuildingID) as CountSubQuery
+ON Buildings.BuildingID = CountSubQuery.BuildingID;
+
+The ISNULL call on line 19 allows us to have a count # of 0 for buildings without any open requests
+Use Left Join for the same reason (INNER JOIN would throw away the buildings without any open requests)
