@@ -1,0 +1,20 @@
+Multiple Apartments:
+
+Write a SQL query to get a list of tenants who are renting more than one apartment.
+
+Just retrieving Tenant ID:
+
+SELECT TenantID, COUNT(ApartmentID) as NumApartments
+FROM TenantApartments
+GROUP BY TenantID
+HAVING NumApartments > 1;
+
+----
+
+If we want the tenants' names we will need to join with the Tenants table:
+
+SELECT FIRST(TenantName), COUNT(ApartmentID) as NumApartments
+FROM TenantApartments
+INNER JOIN Tenants ON TenantApartments.TenantID = Tenants.TenantID
+GROUP BY TenantID
+HAVING NumApartments > 1;
