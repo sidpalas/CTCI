@@ -1,0 +1,12 @@
+Close requests
+
+Building #11 (is that BuildingID = 11?) is undergoing renovation. Implement a query to close all requests from apartments in this building.
+
+----
+
+UPDATE Requests
+SET Status = 'Closed'
+WHERE AptID IN (
+  SELECT AptID
+  FROM apartments
+  WHERE BuildingID = 11);
