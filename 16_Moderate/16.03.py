@@ -31,16 +31,16 @@ def computeIntersection(line1, line2):
 
     if slope1 == slope2:
         if intercept1 == intercept2: #co-linear
-            if line1.minX <= line2.minX <= line1.maxX:
+            if isBetween(line1.minX, line2.minX, line1.maxX):
                 xIntersection = line2.minX
                 yIntersection = slope2 * line2.minX + intercept2
-            elif line1.minX <= line2.maxX <= line1.maxX:
+            elif isBetween(line1.minX, line2.maxX, line1.maxX):
                 xIntersection = line2.maxX
                 yIntersection = slope2 * line2.maxX + intercept2
-            elif line2.minX <= line1.minX <= line2.maxX:
+            elif isBetween(line2.minX, line1.minX, line2.maxX):
                 xIntersection = line1.minX
                 yIntersection = slope1 * line1.minX + intercept1
-            elif line2.minX <= line1.maxX <= line2.maxX:
+            elif isBetween(line2.minX, line1.maxX, line2.maxX):
                 xIntersection = line1.maxX
                 yIntersection = slope1 * line1.maxX + intercept1
             else: #no endpoint falls within other lines range (no overlap)
@@ -53,11 +53,14 @@ def computeIntersection(line1, line2):
         xIntersection = (intercept2 - intercept1)/(slope1 - slope2)
         yIntersection = slope1 * xIntersection + intercept1
 
-        if line1.minX <= xIntersection <= line1.maxX and line2.minX <= xIntersection <= line2.maxX:
+        if isBetween(line1.minX, xIntersection, line1.maxX) \
+            and isBetween(line2.minX, xIntersection, line2.maxX):
             return (xIntersection, yIntersection)
         else: #intersection occurs outside of at least one line
             return "intersection not on lines"
 
+def isBetween(start, val, end):
+    return min(start,end) <= val <= max(start,end)
 
 testLine1 = Line(-1, -1, 1,  1)
 testLine2 = Line(-1,  1, 1, -1)
@@ -67,7 +70,6 @@ testLine5 = Line(2, 2, 3, 3)
 testLine6 = Line(-1,  1, -.5, .5)
 testLine7 = Line(1, -1, -1, 1)
 testLine8 = Line(-2, -2, 2,  2)
-
 
 print(computeIntersection(testLine1, testLine2)) #should be (0,0)
 print(computeIntersection(testLine1, testLine3)) #should be (1,1)
