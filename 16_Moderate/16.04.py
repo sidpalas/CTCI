@@ -26,7 +26,6 @@ def checkTicTacToe(board):
     #no winning lines found
     return False
 
-
 def checkLine(line):
     if None in line:
         return False
