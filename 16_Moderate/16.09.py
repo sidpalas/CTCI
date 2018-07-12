@@ -6,7 +6,7 @@ def mult(a,b):
         if b > 0:
             product += a
         else:
-            product -= a
+            product = sub(product,a)
     return product
 
 def sub(a,b):
@@ -28,7 +28,7 @@ def div(a,b):
     while mult(lower,b) < a:
         #could continue to split the range in half here rather than increment by 1,
         #it would require very careful bookkeeping of the relevant ranges to avoid
-        #off by one errors 
+        #off by one errors
         lower += 1
 
     return lower-1
