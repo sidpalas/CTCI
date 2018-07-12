@@ -1,5 +1,20 @@
 #write methods for all multiply, subtract, divide using only add
 
+def negate(a):
+    neg = 0;
+    if a<0:
+        newSign = 1
+    else:
+        newSign = -1
+    while a != 0:
+        neg += newSign
+        a += newSign
+
+    return neg
+
+def sub(a,b):
+    return a + negate(b) # this is sort of cheating, but I dont know of a way to flip sign bit of an int in python b/c the int size is variable (not fixed)
+
 def mult(a,b):
     product = 0
     for i in range(abs(b)):
@@ -8,9 +23,6 @@ def mult(a,b):
         else:
             product = sub(product,a)
     return product
-
-def sub(a,b):
-    return a + (-b) # this is sort of cheating, but I dont know of a way to flip sign bit of an int in python b/c the int size is variable (not fixed)
 
 def div(a,b):
     # we can start with 1 and work our way up doubling along the way
