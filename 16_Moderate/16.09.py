@@ -26,6 +26,9 @@ def div(a,b):
         upper = mult(upper,2)
 
     while mult(lower,b) < a:
+        #could continue to split the range in half here rather than increment by 1,
+        #it would require very careful bookkeeping of the relevant ranges to avoid
+        #off by one errors 
         lower += 1
 
     return lower-1
