@@ -27,7 +27,7 @@ def mult(a,b):
 def div(a,b):
     # we can start with 1 and work our way up doubling along the way
     if bool(a<0) ^ bool(b<0): #exactly 1 of the values is < zero
-        return sub(-1, div(abs(a), abs(b)))
+        return sub(negate(1), div(abs(a), abs(b)))
 
     if a < b:
         return 0
