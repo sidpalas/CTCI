@@ -25,6 +25,7 @@ def mostLivingPeople(people):
     maxIdx = 0
     for i in range(numYears-1):
         currentPeople = prevPeopleAlive + birthTracker[i] - deathTracker[i]
+        #there is actually no need to store this... but it makes it easier to debug
         peopleAlive[i] += currentPeople
         prevPeopleAlive = currentPeople
         if currentPeople > maxPeople:
