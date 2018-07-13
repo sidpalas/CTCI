@@ -1,3 +1,5 @@
+# Didn't implement XML objects and methods to test this
+
 tagMap = {'family': '1',
           'person':'2',
           'firstName':'3',
@@ -15,10 +17,10 @@ def encodeElement(element, outputBuilder):
     tag = tagMap([element.name])
     encode(tag, outputBuilder)
     for attribute in element.attributes:
-        encode(attribute, outputBuilder)
+        encodeValue(attribute, outputBuilder)
     encode(END, outputBuilder)
     if not(element.value == None or element.value == ""):
-        encode(root.value, outputBuilder)
+        encodeValue(root.value, outputBuilder)
     else:
         for child in element.children:
             encodeElement(child, outputBuilder)
