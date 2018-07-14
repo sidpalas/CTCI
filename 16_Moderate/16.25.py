@@ -1,7 +1,7 @@
 class LRUCache:
     def __init__(self,size):
         self.primaryStore = dict()
-        self.editOrder = [None]*size
+        self.editOrder = [None]*size #should use a doubly linked list here to make removal O(1)
 
     def insert(self,key,value):
         removalKey = self.editOrder.pop(0)
